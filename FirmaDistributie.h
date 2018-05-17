@@ -12,9 +12,9 @@
 
 template <class T> class FirmaDistributie
 {
-    unsigned int dimensiune_F, dimensiune_P;
+    unsigned int dimensiune_F;
     Film *F;
-    Personal *P, *Baza; // *P - vector, asemenea lui F
+    Personal *Baza; // *P - vector, asemenea lui F
 
     //friend class Personal;
 
@@ -23,7 +23,7 @@ template <class T> class FirmaDistributie
         static T numar_actori;
 
         FirmaDistributie();
-        FirmaDistributie(int nr_filme, vector <Film> FV, int nr_persoane, vector <Personal> PV);
+        FirmaDistributie(const int &nr_filme, Film FV[], Personal *P);
         virtual ~FirmaDistributie();
         FirmaDistributie(const FirmaDistributie &other);
         FirmaDistributie& operator= (const FirmaDistributie &other);
@@ -33,6 +33,7 @@ template <class T> class FirmaDistributie
         //setters
 
         //overloading
+        template <class U> friend istream& operator>> (istream &in, FirmaDistributie<U> &FD);
 
         // ETEROGEN LIST
         void set(Personal *p) {Baza = p;} //numar_persoane ++;}

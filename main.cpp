@@ -81,5 +81,17 @@ int main()
 
     fin.close();
 
+    /*int x = nr_personal + nr_actori + nr_regizori;
+    FirmaDistributie <unsigned int> Array[x];   //undefined reference to 'FirmaDistributie<unsigned int>::FirmaDistributie()'
+
+    for(int i = 0; i < x; i ++)
+    {
+        if(i < nr_regizori)
+        {
+            //Array[i](nr_filme, F, static_cast<Personal>(R[i]));
+
+        }
+    }*/
+
     return 0;
 }
