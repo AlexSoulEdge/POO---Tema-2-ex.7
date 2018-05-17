@@ -9,6 +9,7 @@ unsigned int Personal::numar_angajati = 0;
 Personal::Personal()
 {
     numar_angajati ++;
+    //FirmaDistributie<T>::numar_persoane++;
 }
 
 Personal::Personal(string pnume, string pcnp, string pnume_film, unsigned int x) : nume(pnume), cnp(pcnp), nume_film(pnume_film), procent(x)

@@ -1,6 +1,9 @@
 #include "FirmaDistributie.h"
 #include <exception>
 
+template <class T> unsigned int FirmaDistributie<T>::numar_persoane = 0;
+//template <class T> T FirmaDistributie<T>::numar_actori = 0;*/
+
 template <class T> FirmaDistributie<T>::FirmaDistributie() : dimensiune_F(0), dimensiune_P(0)
 {
     F = NULL;

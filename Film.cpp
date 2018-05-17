@@ -69,14 +69,47 @@ ostream& operator<< (ostream &out, const Film &film)
 {
     out << "Denumire: " << film.nume << endl;
     out << "Tip: " << film.tip << endl;
-    out << "Durata: " << film.durata << endl;
+    out << "Durata: " << film.durata << " minute" << endl;
 
     return out;
 }
 
 istream& operator>> (istream &in, Film &film)
 {
-    in >> film.nume >> film.tip >> film.durata;
+    string temp_nume;
+    in >> temp_nume >> film.tip >> film.durata;
+
+    film.nume = film.fix_names(temp_nume);
 
     return in;
+}
+
+string Film::fix_names(string s)
+{
+    string temp;
+    int number_of_spaces = 0;
+
+    for(int i = 0; i < s.size(); i ++)
+    {
+        if(isupper(s[i]))
+            number_of_spaces ++;
+    }
+
+    temp.resize(s.size() + number_of_spaces);
+
+    int k = 0;
+    for(int i = 0; i < s.size(); i ++)
+    {
+        temp[k] = s[i];
+        if(isupper(s[i]) && i)
+        {
+            temp[k] = ' ';
+            k++;
+            temp[k] = s[i];
+        }
+
+        k ++;
+    }
+
+    return temp;
 }

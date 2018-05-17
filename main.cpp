@@ -43,7 +43,11 @@ using namespace std;
 int main()
 {
     ifstream fin("date.in");
-    int nr_actori, nr_regizori, nr_personal;
+    int nr_filme, nr_actori, nr_regizori, nr_personal;
+
+    fin >> nr_filme; Film F[nr_filme];
+    for(int i = 0; i < nr_filme; i ++)
+        fin >> F[i];
 
     fin >> nr_actori; Actor A[nr_actori];
     for(int i = 0; i < nr_actori; i ++)
@@ -57,7 +61,12 @@ int main()
     for(int i = 0; i < nr_personal; i ++)
         fin >> P[i];
 
-    cout << "----------- Lista Regizori: --------------" << endl;
+
+    cout << "----------- Lista Filme: --------------" << endl;
+    for(int i = 0; i < nr_filme; i ++)
+        cout << F[i] << endl;
+
+    cout << endl << "----------- Lista Regizori: --------------" << endl;
     for(int i = 0; i < nr_regizori; i ++)
         R[i].print_data();
 

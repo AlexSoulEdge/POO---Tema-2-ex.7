@@ -2,6 +2,7 @@
 #define PERSONAL_H
 #include <string>
 #include <iostream>
+//#include "FirmaDistributie.h"
 
 using namespace std;
 
@@ -12,6 +13,8 @@ class Personal
 
     public:
         static unsigned int numar_angajati;
+
+        //friend class FirmaDistributie;
 
         Personal();
         Personal(string pnume, string pcnp, string pnume_film, unsigned int x);

@@ -32,6 +32,9 @@ class Film
         //overloading
         friend ostream& operator<< (ostream &out, const Film &film);
         friend istream& operator>> (istream &in, Film &film);
+
+        //other
+        string fix_names(string s);
 };
 
 #endif // FILM_H

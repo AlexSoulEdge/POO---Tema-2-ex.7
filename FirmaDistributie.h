@@ -14,10 +14,13 @@ template <class T> class FirmaDistributie
 {
     unsigned int dimensiune_F, dimensiune_P;
     Film *F;
-    Personal *P;
+    Personal *P, *Baza; // *P - vector, asemenea lui F
+
+    //friend class Personal;
 
     public:
-        static T numar_persoane, numar_actori;
+        static unsigned int numar_persoane;
+        static T numar_actori;
 
         FirmaDistributie();
         FirmaDistributie(int nr_filme, vector <Film> FV, int nr_persoane, vector <Personal> PV);
@@ -30,6 +33,14 @@ template <class T> class FirmaDistributie
         //setters
 
         //overloading
+
+        // ETEROGEN LIST
+        void set(Personal *p) {Baza = p;} //numar_persoane ++;}
+        void print_data(void)
+        {
+            Baza->print_data();
+        }
+        void print_persoane() {cout << numar_persoane;}
 
 
 };
